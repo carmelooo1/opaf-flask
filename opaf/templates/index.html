@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenStrandNavigator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mystyles.css') }}">
+</head>
+<body>
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <div class="container">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/OPAF.png') }}" alt="Logo" class="logo">
+        </a>        
+        <h1>Welcome to TenStrandNavigator</h1>
+        <p>This is an online platform for grade 10 students designed to help them make decisions about which strand to take by providing their average grade per subject in grade ten.</p>
+        <a href="{{ url_for('submit_grades') }}"><button id="startButton">Let's Begin!</button></a>
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            document.getElementById('loader-container').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

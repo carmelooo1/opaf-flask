@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenStrandNavigator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='submitstyle.css') }}">
+</head>
+<body>
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <div class="container">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/OPAF.png') }}" alt="Logo" class="logo">
+        </a>        
+        <h1>Grade 10 Grade Input</h1>
+      <form action="/submit_grades" method="post" class="two-columns">
+            <div class="column">
+                <label for="math">Math Grade:</label>
+                <input type="number" id="math" name="math" min="0" max="100" required>
+
+                <label for="science">Science Grade:</label>
+                <input type="number" id="science" name="science" min="0" max="100" required>
+
+                <label for="english">English Grade:</label>
+                <input type="number" id="english" name="english" min="0" max="100" required>
+
+                <label for="history">AP Grade:</label>
+                <input type="number" id="ap" name="ap" min="0" max="100" required>
+                <div class="gender-container">
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="gender" value="1" required> 
+                </div>
+            </div>
+            <div class="column">
+                <label for="values">Values Grade:</label>
+                <input type="number" id="values" name="values" min="0" max="100" required>
+
+                <label for="tle">TLE Grade:</label>
+                <input type="number" id="tle" name="tle" min="0" max="100" required>
+
+                <label for="mapeh">MAPEH Grade:</label>
+                <input type="number" id="mapeh" name="mapeh" min="0" max="100" required>
+
+                <label for="filipino">Filipino Grade:</label>
+                <input type="number" id="filipino" name="filipino" min="0" max="100" required>
+            
+            <div class="gender-container">
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="gender" value="0" required>
+                </div> 
+            </div>
+            <div class="position-ni-button">
+             <div class="submit-button">
+                <input type="submit" value="Submit">
+             </div> 
+           </div>
+                 
+
+   
+</div>
+</form>
+
+
+
+    <script>
+        window.addEventListener('load', function () {
+            document.getElementById('loader-container').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

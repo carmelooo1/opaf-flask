@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mystyles.css') }}">
+</head>
+<body>
+    <div class="loader-container" id="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <div class="container">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/OPAF.png') }}" alt="Logo" class="logo">
+        </a>
+        <h2>Your Average: {{ sumave }} </h2>
+        <h2>Primary Strand: {{ predicted_strand }}</h2>
+        <h2>Secondary Strand: {{ predicted_strand1 }}</h2>
+        
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 TenStrandNavigator. All rights reserved.</p>
+            <button onclick="submitAnotherResponse()">Submit Another Response</button>
+        </div>
+    </div>
+
+    <script>
+        function submitAnotherResponse() {
+            window.location.href = "{{ url_for('submit_grades') }}";
+        }
+    </script>
+
+    <script>
+        window.addEventListener('load', function () {
+            document.getElementById('loader-container').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
